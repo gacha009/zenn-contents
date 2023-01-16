@@ -6,7 +6,7 @@ topics: [Maya, debug]
 published: false
 ---
 
-# 概要
+# 概要!
 
 本記事は、mayaのツールをVisualStudioCode(以下、vscode)で書いている人向けになります。
 vscodeは、ツールを跨いでdebugすることができます。これをリモートデバックというそうです。
