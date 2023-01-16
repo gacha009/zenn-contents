@@ -2,7 +2,7 @@
 title: "qtDesigner.exeを自分でインストールする方法"
 emoji: "🔰"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: [GUI]
+topics: [Maya, GUI]
 published: true
 ---
 
