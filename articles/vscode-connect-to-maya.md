@@ -6,7 +6,7 @@ topics: [Maya, debug]
 published: false
 ---
 
-# 概要!
+# 概要
 
 本記事は、mayaのツールをVisualStudioCode(以下、vscode)で書いている人向けになります。
 vscodeは、ツールを跨いでdebugすることができます。これをリモートデバックというそうです。
@@ -16,19 +16,17 @@ vscodeは、ツールを跨いでdebugすることができます。これをリ
 もうちょっと効率よくdebug出来ないかなぁ...と思っている方は、ぜひこの記事を試してみてください。
 
 # 結論
+この記事では、[MayaCode]を使ってリモートデバックを行う方法を説明いたします。
+[MayaCode]は、設定が簡単で、mayaのscript editorのようなdebugが可能です。
 
-私は、以下の2通りのリモートデバッグの方法を利用しています。
-1.  [MayaCode]という、vscodeに用意されたExtensionを使う方法
-2.  debugpyを利用する方法
+他にも、[debugpy]を利用する方法があります。
+break pointが設定できるので、error時の原因追及に便利だと思います。
 
-1.は、設定が簡単で、mayaのscript editorのようなdebugが可能です。
-2.は、break pointが設定できるので、error時の原因追及に便利です。
-
-この記事では、1. の[MayaCode]を導入する方法を説明いたします。
-2.については、別の記事にまとめています。
+私は時と場合に応じて両方使い分けています。
+皆様も自分に合った方法を探してみてください。
 
 
-# MayaCodeについて
+# MayaCode
 vscodeには、拡張機能があり、これを、Extensionと呼びます。
 この方法では、[MayaCode]というExtensionを利用します。
 詳しくは、MayaCodeに概要が書いてあるので、確認してもらえればと思いますが、
@@ -80,14 +78,15 @@ sourceTypeがmelになっていますが、使っている言語によって変�
 - python/mel両方デバックできる
 
 初心者にもとっつきやすいですし、pythonもmelもデバックできるのが、良いところですね。
+
 #### デメリット
 - errorが出たときにbreakpointを使えないので、長文デバックには不向き
 - __file__等のコードが入っていると、mayaでerrorになってしまう
 
 スクリプト自体を実行しているので、コードに__file__等が入っていると、エラーになってしまいます。
 
-結論でも触れましたが、別の記事で、debugpyについても記載しています。
-Extensionは、uninstallもできるので、もし興味がありましたら記事を確認してみてください。
+結論でも触れましたが、[別の記事](https://zenn.dev/gacha0923/articles/vscode-connect-to-maya_debugpy)で、debugpyについても記載しています。
+Extensionは、uninstallもできるので、もし興味がありましたら確認してみてください。
 
 
 
