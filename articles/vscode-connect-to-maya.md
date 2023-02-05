@@ -3,7 +3,7 @@ title: "Visual Studio CodeとMayaを繋げてコードをデバックする方�
 emoji: "🔰"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [Maya, debug] 
-published: false
+published: true
 ---
 
 # 概要

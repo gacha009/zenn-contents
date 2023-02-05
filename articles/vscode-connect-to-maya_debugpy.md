@@ -3,11 +3,11 @@ title: "Visual Studio CodeをMayaと繋げてデバックする方法(debugpy編
 emoji: "🔰"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [Maya, vscode, debug] 
-published: false
+published: true
 ---
 
 # 概要
-[ひとつ前の記事](https://zenn.dev/gacha0923/articles/vscode-connect-to-maya)で、[MayaCode]を使用したリモートデバッグの方法を説明いたしました。
+[他の記事](https://zenn.dev/gacha0923/articles/vscode-connect-to-maya)で、[MayaCode]を使用したリモートデバッグの方法を説明いたしました。
 本記事では、[debugpy]を利用する方法を説明いたします。
 
 # 結論
