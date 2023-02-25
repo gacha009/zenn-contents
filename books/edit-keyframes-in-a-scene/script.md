@@ -71,6 +71,6 @@ for ac in anim_curves:
 ```
 今回は、相対的にキーを動かしたいので、`relative=True`にしておきます。
 `time`については、シーンのスタートフレームとエンドフレームを指定します。
-![](/images/script/timeSlider.png)
+![](/images/edit-keyframes-in-a-scene/timeSlider.png)
 
 
