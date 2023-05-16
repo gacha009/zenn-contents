@@ -1,7 +1,7 @@
 title: "シーン内のキーフレームを編集する"
 summary: "この本は、シーン内のキーフレームを指定のフレーム数移動させるツールを作ることを目的とします。
 
-python scriptの書き方, GUIの作り方をそれぞれチャプターに分けて解説していきます。
+toolを作る場合の考え方、python scriptの書き方、GUIの作り方をそれぞれチャプターに分けて解説していきます。
 環境は、maya2020, python2.7になります。
 python3ではありませんので、ご注意ください。"
 topics: [maya, animation, python]
@@ -9,5 +9,10 @@ published: false
 price: 0 # 有料の場合200〜5000
 # 本に含めるチャプターを順番に並べましょう
 chapters:
-  - about
-  - script
+  - 00_about
+  - 01_function
+  - 02_before_create_ui
+  - 03_create_ui
+  - 04_ui_utility
+  - 05_ui_class
+  - 06_run_in_maya
