@@ -9,7 +9,7 @@ title: "UIをMayaで読み込む(Utility編)"
 [uiファイルのコンバート](#uiファイルのコンバート)
 :::
 
-# 結論
+## 結論
 Mayaで読み込むために必要なことは、下記の二つです。
 - .uiファイルのコンバート
 - windowとして表示するためのClassの作成
@@ -19,8 +19,9 @@ Mayaで読み込むために必要なことは、下記の二つです。
 
 
 # uiファイルのコンバート
-先ほど作ったUIは、xmlファイルですので、mayaが読み込めるようpythonファイルに変換する必要があります。
-以下のスクリプトは、xmlファイルのコンバートを行うモノになります。
+先ほど作ったUIは、xmlファイルです。このままだとmayaで読み込むことができません。
+ですので、mayaが読み込めるようにpythonファイルに変換する必要があります。
+以下のスクリプトは、xmlファイルのコンバートを行う為のモノになります。
 こちらを、最初に作ったui_utility.pyにコピーして保存してください。
 
 ```py:ui_utility.py
@@ -66,13 +67,16 @@ def ui_compiler(ui_fullpath):
 ```
 uiファイルのform_classとbase_classを取得するために、uiファイルを読み込んで、pythonファイルに変換しています。
 スクリプトの中身を詳しく解説しようとすると、今回のチャプターでは足りないので、今回は一部だけ解説いたします。
-下記の図が、pythonでコンバートされたUIの中身の一部です。
+下図が、pythonでコンバートされたUIの中身の一部です。
+![](/images/edit-keyframes-in-a-scene/04_ui_utility/2023-05-27-14-29-14.png)
 
+windowとして表示するためのClassは、この`Ui_MainWindow`を継承する必要があります。
+また、setupUi()をClass内で呼び出しますので、引数になっている`MainWindow`にウィジェットを指定しなければなりません。
 
-windowとして表示するためのClassは、この`UI_MainWindow`を継承する必要があります。
-また、setuiUi()をClass内で呼び出しますので、引き数として `QMainWindow` を指定する必要があります。
-それが、`form_class`と`base_class`に割り当てられています。
-中身を確認してみると、それぞれ、`form_class = <class 'Ui_MainWindow'>`, `base_class = <class 'PySide2.QtWidgets.QMainWindow'>`になっていると思います。
+`form_class`と`base_class`は、それらをそれぞれ指定しています。
+中身を確認してみましょう。
+`form_class = <class 'Ui_MainWindow'>`
+`base_class = <class 'PySide2.QtWidgets.QMainWindow'>` となっていると思います。
 
 
 ::::message

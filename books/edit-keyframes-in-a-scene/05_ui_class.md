@@ -12,9 +12,9 @@ title: "UIをMayaで読み込む(Class編)"
 [UIのelementと命令](#uiのelementと命令)
 :::
 
-# はじめに
+## はじめに
 MayaでUIを読み込むためには、classを設定しなければなりません。
-ひとつ前のチャプターは、この、classを設定するための準備になります。
+ひとつ前のチャプターは、このclassを設定するための準備になります。
 では、早速Classを作っていきましょう。
 
 # windowとして表示するためのClassの作成
@@ -82,7 +82,7 @@ reload(functions)
 ```
 
 ここでは、モジュールの読み込みをしています。
-`import`だけだと、一回だけしか読み込まないので、スクリプトを編集した場合に、それを反映してくれません。`reload`は、実行時に再度読み込みを行ってくれるので、編集をする場合は記述しておくことをお勧めします。
+`import`だけだと、一回だけしか読み込まないので、スクリプトを編集した場合に、それを反映してくれません。`reload`は、実行時に再度読み込みを行ってくれるので、スクリプトの編集中は記述しておくことをお勧めします。
 
 ---
 #### Class作成の前準備
@@ -98,26 +98,32 @@ FORM_CLASS, BASE_CLASS = uiutility.ui_compiler(UI_PATH)
 #### 目的
 ここの記述は、最終行の`FORM_CLASS, BASE_CLASS = uiutility.ui_compiler(UI_PATH)`を行うことを目的としています。
 `FORM_CLASS` と `BASE_CLASS` は、UIでMayaを呼び出すために必要な素材です。
-最終行では、ひとつ前のチャプターで保存した`uiutility.py`の`ui_compiler(ui_fullpath)`という関数を呼び出し、これらを取得しています。
+最終行では、ひとつ前のチャプターで保存した`uiutility.py`の`ui_compiler(ui_fullpath)`という関数を呼び出し、`FORM_CLASS` と `BASE_CLASS` の値を取得しています。
 
-`ui_compiler(ui_fullpath)`を呼び出すには、uiファイルのフルパス(`ui_fullpath`)が必要になります。最終行までの記述は、一部を除いて`ui_fullpath`を求める為の過程だと思ってください。
+`ui_compiler(ui_fullpath)`を実行するためには、引数(`ui_fullpath`)を指定しなくてはなりません。
+最終行までの記述は、一部を除いて`ui_fullpath`を求める為の過程だと思ってください。
+
+:::message
+`ui_fullpath`は、uiファイルのフルパスを指定します。
+:::
 
 #### スクリプトの解説
 `__file__`は、実行しているファイル自身です。今回の場合は、interface.pyになります。
 なので、`BASEFOLDER = os.path.dirname(__file__)`は、interface.pyがあるディレクトリのパスを取得しています。
 
-`UI_NAME`は、先ほど作成した.uiファイルの名前を指定します。ここは任意の名前で構いません。
+`UI_NAME`は、先ほど作成した.uiファイルの名前を指定します。
 私は`mainwindow.ui`という名前で保存しましたので、そのように記述しています。
 
 `UI_PATH = os.path.join(BASEFOLDER, UI_NAME)`は、`BASEFOLDER`と`UI_NAME`を連結させています。
 つまり、`interface.py があるディレクトリのパス(BASEFOLDER)` + `UIのファイル名(UINAME)` = **uiのfullpath** となります。
 
+一部を除いて、と記載したのは、`uiutility.close_qt_window(UI_NAME)`は、pathを求めるものではないからです。
+これは、もし`UI_NAME`と同じ名前のUIが既に起動していた場合に、そのUIを削除する為の記述です。これを書いておくことで、**windowの重複を防いでいます。**
+
 :::message
  `uiutility.ui_compiler(UI_PATH)`と記載していますが、
 これは、`uiutility.ui_compiler(ui_fullpath=UI_PATH)`と同様になります。
 :::
-一部を除いて、と記載したのは、`uiutility.close_qt_window(UI_NAME)`は、pathを求めるものではないからです。
-これは、もし`UI_NAME`と同じ名前のUIが既に起動していた場合に、そのUIを削除する為の記述です。これを書いておくことで、**windowの重複を防いでいます。**
 
 ---
 #### Classの作成
@@ -183,6 +189,6 @@ UIを呼び出す処理は、先ほど完了しました。
 
 `self.move_allkeys`を()内に設定すると、関数の`def move_allkeys(self)`が実行されます。
 `move_allkeys()`の中身は、呼び出された(実行された)時点のlineEditの状態を読み取り、
-数値に変換して、functionsのmain関数を実行します。
+数値に変換して、functionsのmain関数を実行する。というものです。
 
 これで、動かしたい数値を設定してボタンを押せば、シーン内のすべてのキーフレームを動かすことのできるGUIの完成です！

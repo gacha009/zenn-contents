@@ -11,13 +11,14 @@ title: "ツールのUIを作成する"
 [Layoutを調整する](#layoutを調整する)
 :::
 
-# はじめに
+## はじめに
 このチャプターでは、qtDesignerを使ってUIを作成していきます。
-作るための考え方と一緒に解説していきますので、必ずしもqtDesignerを使う必要はありませんが、もし良かったらいい機会ですので、挑戦してみてください。
+作るための考え方を一緒に解説していきますので、必ずしもqtDesignerを使う必要はありません。
+ですが、もし良かったら、いい機会ですので挑戦してみてください。
 [qtDesignerをインストールする方法の記事](#https://zenn.dev/gacha0923/articles/qtdesigner-install)
 
 
-# 結論
+## GUI
 最終的には、下図のようなUIを作成することを目指します。
 ![](/images/edit-keyframes-in-a-scene/03_create_ui/2023-04-12-22-56-19.png)
 
@@ -34,7 +35,8 @@ title: "ツールのUIを作成する"
    exe fileは、`C:\Python27\Lib\site-packages\PySide`以下にあると思いますので、確認してみてください。
 
 #### 1. MainWindowを作成する
-   templates\forms以下の**Main Window**を選択して、**Create**を押します。
+   初めにNew Formというwindowが出てきます。
+   templates\forms以下の**Main Window**を選択して、**Create**を押してください。
    すると、下図のようなWindowが出現します。
    ![](/images/edit-keyframes-in-a-scene/03_create_ui/2023-04-06-22-50-22.png =500x)
    これが土台になります。この中に、button等のwidgetを追加していきます。

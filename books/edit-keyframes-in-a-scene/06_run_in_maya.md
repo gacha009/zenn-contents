@@ -8,7 +8,7 @@ title: "UIをMayaで呼び出す"
 [実行までのプロセス](#実行までのプロセス)
 :::
 
-# 結論
+## 実行方法
 スクリプトエディタで、下記のスクリプトを実行すると、UIを呼び出すことができます。
 ```py
 from move_keyframes import interface
