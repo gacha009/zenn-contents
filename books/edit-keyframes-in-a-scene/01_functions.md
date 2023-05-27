@@ -6,6 +6,7 @@ title: "python script を作成する"
 [シーン内のkeyframeを取得する](#シーン内のkeyframeを取得する)
 [取得したkeyframeを移動させる](#取得したkeyframeを移動させる)
 [動かしたいフレーム数を指定する](#動かしたいフレーム数を指定する)
+[animCurve に対するフィルター](#animcurve-に対するフィルター)
 :::
 
 chapter0で書き出した要素をもとに、スクリプトを作成していきます。
@@ -54,7 +55,8 @@ print('success: move all keyframes.')
 ```
 以下、処理ごとに解説していきます。
 
-# シーン内のkeyframeを取得する
+
+## シーン内のkeyframeを取得する
 keyframeは、animCurveというノードで管理されています。
 Nodeの取得は、`cmds.ls()`というコマンドを使って行えます。
 また、このコマンドは、取得したいタイプを指定できるので、以下のように書くと、シーン内のすべてのanimCurveを取得することが出来ます。
@@ -64,7 +66,7 @@ anim_curves = cmds.ls(type='animCurve')
 ```
 
 
-# 取得したkeyframeを移動させる
+## 取得したkeyframeを移動させる
 keyframeを移動させるには、animCurveに登録されているkeyを編集すればOKです。
 よくわからない方は、animCurveノードをMayaで選択して、AttributeEditorを見てみてください。
 ![](/images/edit-keyframes-in-a-scene/01_functions/2023-05-27-11-11-28.png)
@@ -97,7 +99,8 @@ end_frame   = cmds.playbackOptions(q=True, maxTime=True)
 ```
 注意してほしいのですが、`startFrame`と`endFrame`だと、外側のボックスで設定されている数値を取得してしまいます。`minTime`と`maxTime`を使用すると、内側のボックスの数値を取得できます。
 
-# 動かしたいフレーム数を指定する
+
+## 動かしたいフレーム数を指定する
 動かしたいフレーム数は、timeChangeで指定します。
 直接入力するより変数化しておいた方が後々便利です。
 ```py:
@@ -121,6 +124,7 @@ for ac in anim_curves:
 ```
 もし対象にしているanimCurveがリファレンスされているものであれば、continueを実行して、その後の処理は行わないようにします。
 
+
 ## 処理の最後に
 `print()`を利用して、処理が最後まで行われたことを知らせます。
 ```py:
@@ -131,6 +135,7 @@ printだとscriptEditorにしか表示されませんので、`maya.api.OpenMaya
 :::message
 apiを使う場合は、モジュールのimportが必要です。
 :::
+
 
 ## 最後に
 シーン内のキーフレームを任意のフレーム数移動させるスクリプトの説明を行ってきました。

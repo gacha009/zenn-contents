@@ -97,10 +97,10 @@ FORM_CLASS, BASE_CLASS = uiutility.ui_compiler(UI_PATH)
 ```
 #### 目的
 ここの記述は、最終行の`FORM_CLASS, BASE_CLASS = uiutility.ui_compiler(UI_PATH)`を行うことを目的としています。
-`FORM_CLASS` と `BASE_CLASS` は、UIでMayaを呼び出すために必要な素材です。
-最終行では、ひとつ前のチャプターで保存した`uiutility.py`の`ui_compiler(ui_fullpath)`という関数を呼び出し、`FORM_CLASS` と `BASE_CLASS` の値を取得しています。
+FORM_CLASS と BASE_CLASS は、UIでMayaを呼び出すために必要な素材です。
+最終行では、ひとつ前のチャプターで保存した uiutility.py の ui_compiler(ui_fullpath) という関数を呼び出し、FORM_CLASS と BASE_CLASS の値を取得しています。
 
-`ui_compiler(ui_fullpath)`を実行するためには、引数(`ui_fullpath`)を指定しなくてはなりません。
+ui_compiler(ui_fullpath)を実行するためには、引数(ui_fullpath)を指定しなくてはなりません。
 最終行までの記述は、一部を除いて`ui_fullpath`を求める為の過程だと思ってください。
 
 :::message
@@ -112,7 +112,7 @@ FORM_CLASS, BASE_CLASS = uiutility.ui_compiler(UI_PATH)
 なので、`BASEFOLDER = os.path.dirname(__file__)`は、interface.pyがあるディレクトリのパスを取得しています。
 
 `UI_NAME`は、先ほど作成した.uiファイルの名前を指定します。
-私は`mainwindow.ui`という名前で保存しましたので、そのように記述しています。
+私はmainwindow.uiという名前で保存しましたので、そのように記述しています。
 
 `UI_PATH = os.path.join(BASEFOLDER, UI_NAME)`は、`BASEFOLDER`と`UI_NAME`を連結させています。
 つまり、`interface.py があるディレクトリのパス(BASEFOLDER)` + `UIのファイル名(UINAME)` = **uiのfullpath** となります。
