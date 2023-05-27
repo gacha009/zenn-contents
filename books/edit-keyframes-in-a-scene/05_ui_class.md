@@ -4,13 +4,6 @@ title: "UIをMayaで読み込む(Class編)"
 
 このチャプターでは、Mayaで、windowとして表示するための方法を解説していきます。
 
-:::details このチャプターの目次
-[windowとして表示するためのClassの作成](#windowとして表示するためのclassの作成)
-[moduleの読み込み](#moduleの読み込み)
-[class作成の前準備](#class作成の前準備)
-[classの作成](#classの作成)
-[UIのelementと命令](#uiのelementと命令)
-:::
 
 ## はじめに
 MayaでUIを読み込むためには、classを設定しなければなりません。

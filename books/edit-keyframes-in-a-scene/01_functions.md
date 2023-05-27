@@ -2,13 +2,6 @@
 title: "python script を作成する"
 ---
 
-:::details このチャプターの目次
-[シーン内のkeyframeを取得する](#シーン内のkeyframeを取得する)
-[取得したkeyframeを移動させる](#取得したkeyframeを移動させる)
-[動かしたいフレーム数を指定する](#動かしたいフレーム数を指定する)
-[animCurve に対するフィルター](#animcurve-に対するフィルター)
-:::
-
 chapter0で書き出した要素をもとに、スクリプトを作成していきます。
 
 
