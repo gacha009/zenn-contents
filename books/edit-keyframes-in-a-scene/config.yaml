@@ -5,7 +5,7 @@ toolを作る場合の考え方、python scriptの書き方、GUIの作り方を
 環境は、maya2020, python2.7になります。
 python3ではありませんので、ご注意ください。"
 topics: [maya, animation, python]
-published: false
+published: True
 price: 0 # 有料の場合200〜5000
 # 本に含めるチャプターを順番に並べましょう
 chapters:
